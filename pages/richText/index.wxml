@@ -1,0 +1,4 @@
+<!--pages/richText/index.wxml-->
+<rich-text>
+富文本
+</rich-text>

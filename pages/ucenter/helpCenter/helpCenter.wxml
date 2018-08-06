@@ -1,0 +1,9 @@
+<view class='container1'>
+  <view class='questionBox' wx:for="{{questionList}}">
+    <view data-id='{{item.id}}' class='questionLine' bindtap='getHelpId'>
+      <view class='txt'>{{item.question}}</view>
+      <image class='goIcon {{item.id===nowId?"translate":""}}' src='../../../static/images/go.png'></image>
+    </view>
+    <view class='answerBox' wx:if="{{item.id===nowId}}">{{item.answer}}</view>
+  </view>
+</view>
