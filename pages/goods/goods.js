@@ -20,13 +20,15 @@ Page({
     userHasCollect: 0,
     number: 1,
     checkedSpecText: '请选择规格数量',
-    openAttr: false,
+    openAttr: false,//是否显示规格选项
     noCollectImage: "/static/images/icon_collect.png",
     hasCollectImage: "/static/images/icon_collect_checked.png",
     collectBackImage: "/static/images/icon_collect.png",
     kefuImage:"/static/images/detail_kefu.png",
     btnTxt:false,//加入购物车
     strNodes:"",//string类型富文本nodes
+    animationData: {},//规格选项弹窗动画
+    animationOpacity:{},//蒙层透明度变化动画
   },
   getGoodsInfo: function () {
     let that = this;
@@ -224,7 +226,12 @@ console.log(that.data.brand)
   },
   onShow: function () {
     // 页面显示
-
+    // 创建动画
+    var animation = wx.createAnimation({
+      duration: 500,
+      timingFunction: 'ease',
+    })
+    this.animation = animation
   },
   onHide: function () {
     // 页面隐藏
@@ -295,6 +302,7 @@ console.log(that.data.brand)
    * 直接购买
    */
   buyGoods0: function () {
+
     var that = this;
     // if (this.data.openAttr == false) {
       //打开规格选择窗口
@@ -303,6 +311,16 @@ console.log(that.data.brand)
         // collectBackImage: "/static/images/detail_back.png",
         btnTxt:true
       });
+      // 动画显示规格选项框
+      this.animation.bottom('0rpx').opacity(1).step()
+      this.setData({
+        animationData: this.animation.export()
+      })
+      // 蒙层逐渐显示
+      this.animation.opacity(1).bottom('0rpx').step()
+      this.setData({
+        animationOpacity: this.animation.export()
+      })
     // } else {
 
     //   //提示选择完整规格
@@ -394,9 +412,20 @@ console.log(that.data.brand)
   },
   // 关闭参数选项弹窗
   closeAttr:function(){
+    this.animation.bottom('-1000rpx').opacity(0).step()
     this.setData({
-      openAttr: !this.data.openAttr
+      animationData: this.animation.export()
     })
+    this.animation.opacity(0).bottom('0rpx').step()
+    this.setData({
+      animationOpacity: this.animation.export()
+    })
+    var that = this
+    var timer = setTimeout(function(){
+      that.setData({
+        openAttr: !that.data.openAttr
+      })
+    },500)
   },
   /**
    * 添加到购物车
@@ -409,6 +438,16 @@ console.log(that.data.brand)
         // collectBackImage: "/static/images/detail_back.png"
         btnTxt:false
       });
+    // 动画显示规格选项框
+    this.animation.bottom('0rpx').opacity(1).step()
+    this.setData({
+      animationData: this.animation.export()
+    })
+    // 蒙层逐渐显示
+    this.animation.opacity(1).bottom('0rpx').step()
+    this.setData({
+      animationOpacity: this.animation.export()
+    })
   },
   // 加入购物车
   addToCart: function () {
@@ -443,6 +482,15 @@ console.log(that.data.brand)
             wx.showToast({
               title: '添加成功'
             });
+            that.animation.bottom('-1000rpx').opacity(0).step()
+            that.setData({
+              animationData: that.animation.export()
+            })
+            that.animation.opacity(0).bottom('0rpx').step()
+            that.setData({
+              animationOpacity: that.animation.export()
+            })
+            
             that.setData({
               openAttr: !that.data.openAttr,
               cartGoodsCount: _res.data.cartTotal.goodsCount

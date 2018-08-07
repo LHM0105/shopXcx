@@ -12,7 +12,7 @@
 }
 
 .service-policy{
-    width: 750rpx;
+    /* width: 750rpx; */
     height: 73rpx;
     background: #f4f4f4;
     padding: 0 31.25rpx;
@@ -592,21 +592,28 @@
     color: #fff;
 }
 @import "../../lib/wxParse/wxParse.wxss";
-.mask{
+.maskBox{
   height: 100%;
   width: 100%;
   position: fixed;
   bottom: 0;
+  z-index: 998;
+}
+.mask{
   background: rgba(0, 0, 0, .5);
-  z-index: 999;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
 }
 .attr-pop{
     width: 100%;
     height: 70%;
-    padding: 31.25rpx;
+    /* padding: 31.25rpx; */
     background: #fff;
     position: absolute;
-    bottom: 0;
+    bottom: -1000rpx;
 }
 .closeBtn{
   width: 80rpx;
