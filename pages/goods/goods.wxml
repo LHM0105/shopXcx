@@ -6,11 +6,7 @@
         <image src="{{item.img_url}}" background-size="cover"></image>
       </swiper-item>
     </swiper>
-    <view class="service-policy">
-      <view class="item">30天无忧退货</view>
-      <view class="item">48小时快速退款</view>
-      <view class="item">满88元免邮费</view>
-    </view>
+    <slogan></slogan>
     <view class="goods-info">
       <view class="c">
         <text class="name">{{goods.name}}</text>
@@ -24,7 +20,8 @@
       </view>
     </view>
     <view class="section-nav section-attr" bindtap="switchAttrPop">
-      <view class="t">请选择规格数量</view>
+      <!-- <view class="t">请选择规格数量</view> -->
+      <view class='t'>{{checkedSpecText}}</view>
       <image class="i" src="../../static/images/address_right.png" background-size="cover"></image>
     </view>
     <!--<view class="section-nav section-act">
@@ -149,9 +146,14 @@
         </view>
       </view>
       <!-- 立即购买 -->
-      <view class='nextBtn' wx:if='{{btnTxt}}' bindtap='buyGoods'>立即购买</view>
+      <view class='nextBtn' wx:if='{{btnTxt===1}}' bindtap='buyGoods'>立即购买</view>
       <!-- 加入购物车 -->
-      <view class='nextBtn' wx:else bindtap="addToCart">加入购物车</view>
+      <view class='nextBtn' wx:elif='{{btnTxt===2}}' bindtap="addToCart">加入购物车</view>
+      <!-- 选择规格参数 -->
+      <view class='btnBox' wx:elif='{{btnTxt===0}}'>
+        <view class='btn cartBtn' bindtap="addToCart">加入购物车</view>
+        <view class='btn buyBtn' bindtap='buyGoods'>立即购买</view>
+      </view>
     </view>
   </view>
 </scroll-view>

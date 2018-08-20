@@ -633,6 +633,25 @@
   height: 100rpx;
   font-size: 32rpx;
 }
+.btnBox{
+  width:100%;
+  border-top: 1rpx solid #d9d9d9;
+  position:absolute;
+  line-height: 100rpx;
+  bottom: 0;
+  height: 100rpx;
+  display: flex;
+  justify-content: center;
+}
+.btnBox .btn{
+  width: 50%;
+  text-align: center;
+  font-size: 32rpx;
+}
+.btnBox .buyBtn{
+    background:#b4282d;
+    color:#fff;
+}
 .attr-pop .img-info{
     width: 687.5rpx;
     height: 177rpx;

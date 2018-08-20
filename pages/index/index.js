@@ -25,6 +25,12 @@ Page({
 	    var self = this;
 	    this.getIndexData();
  },
+  goList:function(e){
+    console.log(e)
+    wx.navigateTo({
+      url: e.currentTarget.dataset.url,
+    })
+  },
   getIndexData: function () {
     let that = this;
     var data = new Object();

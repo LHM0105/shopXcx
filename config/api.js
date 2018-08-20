@@ -1,8 +1,8 @@
 // var NewApiRootUrl = 'http://fly2you.cn/platform/api/';
 // var NewApiRootUrl = 'http://39.108.80.212:8080/platform-framework/api/';
 // var NewApiRootUrl = 'http://7297c931.ngrok.io/platform-framework/api/';
-var NewApiRootUrl = 'http://39.108.80.212:8080/platform-framework/api/';
-
+var NewApiRootUrl = 'http://www.youshiclub.com/api/'
+// var NewApiRootUrl = 'http://39.108.80.212/api/'
 module.exports = {
   IndexUrlNewGoods: NewApiRootUrl + 'index/newGoods', //
   IndexUrlHotGoods: NewApiRootUrl + 'index/hotGoods', //首页数据接口
@@ -10,7 +10,7 @@ module.exports = {
   IndexUrlBrand: NewApiRootUrl + 'index/brand', //首页数据接口IndexUrlChannel
   IndexUrlCategory: NewApiRootUrl + 'index/category', //首页数据接口IndexUrlChannel
   IndexUrlBanner: NewApiRootUrl + 'index/banner', //首页数据接口IndexUrlChannel
-      IndexUrlBannerDetail: NewApiRootUrl +'index/banner',//首页banner点进去，广告详情（by lhm）
+  IndexUrlBannerDetail: NewApiRootUrl +'index/banner',//首页banner点进去，广告详情（by lhm）
   IndexUrlChannel: NewApiRootUrl + 'index/channel', //首页数据接口IndexUrlChannel
     CatalogList: NewApiRootUrl + 'catalog/index',  //分类目录全部分类数据接口
     CatalogCurrent: NewApiRootUrl + 'catalog/current',  //分类目录当前分类数据接口

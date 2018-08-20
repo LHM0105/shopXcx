@@ -16,6 +16,7 @@
   align-items: center;
   justify-content: space-between;
   background-color: #fff;
+  margin-bottom: 20rpx;
 }
 
 .m-menu .item {
@@ -47,7 +48,7 @@
   overflow: hidden;
   background: #fff;
   color: #333;
-  margin-top: 20rpx;
+  /* margin-top: 20rpx; */
 }
 
 .a-section .h {

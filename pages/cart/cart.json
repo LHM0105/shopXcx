@@ -1,3 +1,6 @@
 {
-    "backgroundColor": "#f4f4f4"
+    "backgroundColor": "#f4f4f4",
+    "usingComponents": {
+      "slogan": "../../component/slogan/slogan"
+    }
 }

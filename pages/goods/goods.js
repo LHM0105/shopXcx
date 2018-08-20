@@ -25,7 +25,7 @@ Page({
     hasCollectImage: "/static/images/icon_collect_checked.png",
     collectBackImage: "/static/images/icon_collect.png",
     kefuImage:"/static/images/detail_kefu.png",
-    btnTxt:false,//加入购物车
+    btnTxt:0,//加入购物车
     strNodes:"",//string类型富文本nodes
     animationData: {},//规格选项弹窗动画
     animationOpacity:{},//蒙层透明度变化动画
@@ -55,7 +55,8 @@ console.log(that.data.brand)
             'collectBackImage': that.data.noCollectImage
           });
         }
-        console.log(res.data.info.goods_desc)
+        // 商品详情富文本
+        // console.log(res.data.info.goods_desc)
         var str = res.data.info.goods_desc.replace(new RegExp('<img', 'g'), '<img style="max-width:100%;height:auto;"')
         var str = str.replace(new RegExp('<p', 'g'), '<p style="font-size:0;"')
         that.setData({
@@ -242,12 +243,23 @@ console.log(that.data.brand)
 
   },
   switchAttrPop: function () {
-    if (this.data.openAttr == false) {
+    // if (this.data.openAttr == false) {
       this.setData({
         openAttr: !this.data.openAttr,
-        collectBackImage: "/static/images/detail_back.png"
+        // collectBackImage: "/static/images/detail_back.png",
+        btnTxt:0
       });
-    }
+      // 动画显示规格选项框
+      this.animation.bottom('0rpx').opacity(1).step()
+      this.setData({
+        animationData: this.animation.export()
+      })
+      // 蒙层逐渐显示
+      this.animation.opacity(1).bottom('0rpx').step()
+      this.setData({
+        animationOpacity: this.animation.export()
+      })
+    // }
   },
   closeAttrOrCollect: function () {
     let that = this;
@@ -309,7 +321,7 @@ console.log(that.data.brand)
       this.setData({
         openAttr: !this.data.openAttr,
         // collectBackImage: "/static/images/detail_back.png",
-        btnTxt:true
+        btnTxt:1
       });
       // 动画显示规格选项框
       this.animation.bottom('0rpx').opacity(1).step()
@@ -436,7 +448,7 @@ console.log(that.data.brand)
       this.setData({
         openAttr: !this.data.openAttr,
         // collectBackImage: "/static/images/detail_back.png"
-        btnTxt:false
+        btnTxt:2
       });
     // 动画显示规格选项框
     this.animation.bottom('0rpx').opacity(1).step()

@@ -10,7 +10,7 @@ page{
     min-height: 100%;
     overflow: hidden;
 }
-.service-policy{
+/* .service-policy{
     width: 750rpx;
     height: 73rpx;
     background: #f4f4f4;
@@ -29,7 +29,7 @@ page{
     align-items: center;
     font-size: 25rpx;
     color: #666;
-}
+} */
 
 .no-cart{
     width: 100%;
