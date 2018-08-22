@@ -8,16 +8,16 @@
   
   <view class="user-menu">
     <view class="item">
-      <navigator url="/pages/ucenter/order/order" class="a">
+      <navigate url="/pages/ucenter/order/order" class="a">
         <text class="icon order"></text>
         <text class="txt">我的订单</text>
-      </navigator>
+      </navigate>
     </view>
     <view class="item">
-      <navigator url="/pages/ucenter/coupon/coupon" class="a">
+      <navigate url="/pages/ucenter/coupon/coupon" class="a">
         <text class="icon coupon"></text>
         <text class="txt">优惠券</text>
-      </navigator>
+      </navigate>
     </view>
     <!-- <view class="item no-border">
       <navigator url="url" class="a">
@@ -26,16 +26,16 @@
       </navigator>
     </view> -->
     <view class="item">
-      <navigator url="/pages/ucenter/collect/collect" class="a">
+      <navigate url="/pages/ucenter/collect/collect" class="a">
         <text class="icon address"></text>
         <text class="txt">我的收藏</text>
-      </navigator>
+      </navigate>
     </view>
     <view class="item">
-      <navigator url="/pages/ucenter/footprint/footprint" class="a">
+      <navigate url="/pages/ucenter/footprint/footprint" class="a">
         <text class="icon security"></text>
         <text class="txt">我的足迹</text>
-      </navigator>
+      </navigate>
     </view>
     <!-- <view class="item no-border">
       <navigator url="url" class="a">
@@ -44,10 +44,10 @@
       </navigator>
     </view> -->
     <view class="item">
-      <navigator url="../address/address" class="a">
+      <navigate url="../address/address" class="a">
         <text class="icon address"></text>
         <text class="txt">地址管理</text>
-      </navigator>
+      </navigate>
     </view>
     <!-- <view class="item">
       <navigator url="url" class="a">
@@ -57,29 +57,29 @@
     </view> -->
     <button class='service' open-type="contact">
       <view class="item">
-        <navigator url="url" class="a">
+        <navigate url="url" class="a">
           <text class="icon kefu"></text>
           <text class="txt">联系客服</text>
-        </navigator>
+        </navigate>
       </view>
     </button>
     <view class="item item-bottom">
-      <navigator url="../helpCenter/helpCenter" class="a">
+      <navigate url="../helpCenter/helpCenter" class="a">
         <text class="icon help"></text>
         <text class="txt">帮助中心</text>
-      </navigator>
+      </navigate>
     </view>
     <view class="item item-bottom">
-      <navigator url="/pages/ucenter/feedback/feedback" class="a">
+      <navigate url="/pages/ucenter/feedback/feedback" class="a">
         <text class="icon feedback"></text>
         <text class="txt">意见反馈</text>
-      </navigator>
+      </navigate>
     </view>
     <view class="item item-bottom" v-if="hasMobile != ''">
-      <navigator url="/pages/auth/mobile/mobile" class="a">
+      <navigate url="/pages/auth/mobile/mobile" class="a">
         <text class="icon phone"></text>
         <text class="txt">绑定手机</text>
-      </navigator>
+      </navigate>
     </view>
   </view>
 

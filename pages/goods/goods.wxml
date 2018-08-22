@@ -13,15 +13,15 @@
         <text class="desc">{{goods.goods_brief}}</text>
         <text class="price">￥{{goods.retail_price}}</text>
         <view class="brand" wx:if="{{brand.name}}">
-          <navigator url="../brandDetail/brandDetail?id={{brand.id}}">
+          <navigate url="../brandDetail/brandDetail?id={{brand.id}}">
             <text>{{brand.name}}</text>
-          </navigator>
+          </navigate>
         </view>
       </view>
     </view>
     <view class="section-nav section-attr" bindtap="switchAttrPop">
       <!-- <view class="t">请选择规格数量</view> -->
-      <view class='t'>{{checkedSpecText}}</view>
+      <view class='t'><text wx:if="{{checkedSpecText !=='请选择规格数量'}}">已选择：</text>{{checkedSpecText}}</view>
       <image class="i" src="../../static/images/address_right.png" background-size="cover"></image>
     </view>
     <!--<view class="section-nav section-act">
@@ -34,10 +34,10 @@
     </view>-->
     <view class="comments" wx:if="{{comment.count > 0}}">
       <view class="h">
-        <navigator url="../comment/comment?valueId={{goods.id}}&typeId=0">
+        <navigate url="../comment/comment?valueId={{goods.id}}&typeId=0">
           <text class="t">评价({{comment.count > 999 ? '999+' : comment.count}})</text>
           <text class="i">查看全部</text>
-        </navigator>
+        </navigate>
       </view>
       <view class="b">
         <view class="item">
@@ -102,11 +102,11 @@
       </view>
       <view class="b">
         <view class="item" wx:for="{{relatedGoods}}" wx:key="{{item.id}}">
-          <navigator url="/pages/goods/goods?id={{item.id}}">
+          <navigate url="/pages/goods/goods?id={{item.id}}">
             <image class="img" src="{{item.list_pic_url}}" background-size="cover"></image>
             <text class="name">{{item.name}}</text>
             <text class="price">￥{{item.retail_price}}</text>
-          </navigator>
+          </navigate>
         </view>
       </view>
     </view>
@@ -128,6 +128,7 @@
           </view>
         </view>
         <view class="spec-con">
+        <!-- 规格参数 -->
           <view class="spec-item" wx:for="{{specificationList}}" wx:key="{{item.specification_id}}">
             <view class="name">{{item.name}}</view>
             <view class="values">

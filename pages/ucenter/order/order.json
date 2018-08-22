@@ -1,1 +1,6 @@
-{}
+{
+  "usingComponents": {
+    "navigate": "../../../component/navigate/navigate",
+    "show-empty-data": "../../../component/show-empty-data/show-empty-data"
+  }
+}

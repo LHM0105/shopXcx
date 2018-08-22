@@ -57,7 +57,7 @@
 .goods-info .name{
     height: 41rpx;
     margin-bottom: 5.208rpx;
-    font-size: 41rpx;
+    font-size: 30rpx;
     line-height: 41rpx;
 }
 
@@ -316,7 +316,7 @@
 
 .goods-attr .right{
     float: left;
-    font-size: 36.5rpx;
+    font-size: 25rpx;
     margin-left: 20rpx;
     width: 480rpx;
     height: 45rpx;
@@ -676,7 +676,7 @@
 
 .attr-pop .p{
     font-size: 33rpx;
-    color: #333;
+    color: #b4282d;
     height: 33rpx;
     line-height: 33rpx;
     margin-bottom: 10rpx;

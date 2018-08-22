@@ -18,11 +18,14 @@ page{
 .order .h{
     height: 83.3rpx;
     line-height: 83.3rpx;
-    margin-left: 31.25rpx;
-    padding-right: 31.25rpx;
+    padding: 0 31.25rpx;
     border-bottom: 1px solid #f4f4f4;
     font-size: 30rpx;
     color: #333;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
 }
 
 .order .h .l{
@@ -85,8 +88,7 @@ page{
 .order .b{
     height: 103rpx;
     line-height: 103rpx;
-    margin-left: 31.25rpx;
-    padding-right: 31.25rpx;
+    padding:0 31.25rpx;
     border-top: 1px solid #f4f4f4;
     font-size: 30rpx;
     color: #333;

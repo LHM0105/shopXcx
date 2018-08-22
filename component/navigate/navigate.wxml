@@ -1,2 +1,4 @@
-<!--component/navigate/navigate.wxml-->
-<text>component/navigate/navigate.wxml</text>
+<!-- 导航组件 -->
+<view bindtap='goUrl'>
+  <slot></slot>
+</view>

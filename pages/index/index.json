@@ -1,5 +1,6 @@
 {
     "usingComponents": {
-      "slogan": "../../component/slogan/slogan"
+      "slogan": "../../component/slogan/slogan",
+      "navigate": "../../component/navigate/navigate"
     }
 }

@@ -1,1 +1,5 @@
-{}
+{
+  "usingComponents": {
+    "navigate": "../../../component/navigate/navigate"
+  }
+}

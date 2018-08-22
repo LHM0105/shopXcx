@@ -17,11 +17,11 @@
     <view class="cate-item">
         <view class="b">
             <block wx:for="{{goodsList}}" wx:for-index="iindex" wx:for-item="iitem">
-            <navigator class="item {{iindex % 2 == 0 ? 'item-b' : ''}}" url="../goods/goods?id={{iitem.id}}">
+            <navigate class="item {{iindex % 2 == 0 ? 'item-b' : ''}}" url="../goods/goods?id={{iitem.id}}">
                 <image class="img" src="{{iitem.list_pic_url}}" background-size="cover"></image>
                 <text class="name">{{iitem.name}}</text>
                 <text class="price">￥{{iitem.retail_price}}</text>
-            </navigator>
+            </navigate>
             </block>
         </view>
     </view>

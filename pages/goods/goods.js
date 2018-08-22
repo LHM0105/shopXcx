@@ -80,11 +80,12 @@ console.log(that.data.brand)
     });
 
   },
+  // 选择规格参数
   clickSkuValue: function (event) {
     let that = this;
     let specNameId = event.currentTarget.dataset.nameId;
     let specValueId = event.currentTarget.dataset.valueId;
-
+    
     //判断是否可以点击
 
     //TODO 性能优化，可在wx:for中添加index，可以直接获取点击的属性名和属性值，不用循环
@@ -98,6 +99,11 @@ console.log(that.data.brand)
               _specificationList[i].valueList[j].checked = false;
             } else {
               _specificationList[i].valueList[j].checked = true;
+              // 改变价格显示
+              // if (this.isCheckedAllSpec()){
+              //   console.log(this.getCheckedSpecKey())
+              // }
+              // console.log(this.isCheckedAllSpec(), this.getCheckedSpecKey())
             }
           } else {
             _specificationList[i].valueList[j].checked = false;
@@ -132,7 +138,6 @@ console.log(that.data.brand)
       }
       checkedValues.push(_checkedObj);
     }
-
     return checkedValues;
 
   },
@@ -148,16 +153,32 @@ console.log(that.data.brand)
       }
     });
   },
+
+  // 拼接规格选项
   getCheckedSpecKey: function () {
     let checkedValue = this.getCheckedSpecValue().map(function (v) {
       return v.valueId;
     });
-
     return checkedValue.join('_');
   },
+  // 改变选择的规格文字
   changeSpecInfo: function () {
     let checkedNameValue = this.getCheckedSpecValue();
-
+    //改变价格、主图
+    if(this.isCheckedAllSpec()){
+      var _this = this
+      this.data.productList.map(function (v) {
+        if (v.goods_specification_ids == _this.getCheckedSpecKey()) {
+          var goods = _this.data.goods
+          goods.retail_price = v.retail_price
+          goods.list_pic_url = v.list_pic_url
+          _this.setData({
+            goods:goods
+          })
+          return
+        }
+      });
+    }
     //设置选择的信息
     let checkedValue = checkedNameValue.filter(function (v) {
       if (v.valueId != 0) {
@@ -170,7 +191,7 @@ console.log(that.data.brand)
     });
     if (checkedValue.length > 0) {
       this.setData({
-        'checkedSpecText': checkedValue.join('　')
+        'checkedSpecText':checkedValue.join('　')
       });
     } else {
       this.setData({
@@ -182,6 +203,7 @@ console.log(that.data.brand)
   getCheckedProductItem: function (key) {
     return this.data.productList.filter(function (v) {
       if (v.goods_specification_ids == key) {
+        
         return true;
       } else {
         return false;
